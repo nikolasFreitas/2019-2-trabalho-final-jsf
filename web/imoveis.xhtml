@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Página do Nik</title>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"  />
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </h:head>
+    <h:body>
+        IMOVEIS
+        <div>
+            <p>Criar um novo imóvel</p>
+            <h:form>
+                <div>
+                    <label>Matrícula</label>
+                    <h:inputText value="#{imovelBean.imovel.matricula}"/>                    
+                </div>
+                <label>Valor</label>
+                <h:inputText value="#{imovelBean.imovel.valorVenda}"/>
+                <label>Endereço</label>
+                <h:inputText value="#{imovelBean.imovel.endereco}"/>
+                <h:commandButton value="Adicionar" action="#{imovelBean.adicionar()}"></h:commandButton>
+            </h:form>
+        </div>
+        <h:form>
+            <h:dataTable value="${imovelBean.imovelList}" var="imovel">
+                <h:column>
+                    <f:facet name="header">Matrícula</f:facet>
+                        #{imovel.matricula}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Endereço</f:facet>
+                        #{imovel.endereco}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Valor</f:facet>
+                        #{imovel.valorVenda}
+                </h:column>
+                <h:column>
+                    <h:commandButton value="Deletar" action="#{imovelBean.deleteImovel(imovel)}"/>
+                </h:column>
+                <h:column>
+                    <h:commandButton value="Editar" action="#{imovelBean.editImovel(imovel)}"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

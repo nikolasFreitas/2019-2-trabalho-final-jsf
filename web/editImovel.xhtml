@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Página do Nik</title>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"  />
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <h:form>
+            <div>
+                <lable>Matrícula</lable>
+                <h:inputText title="Matrícula é única e não pode ser alterada" 
+                             disabled="#{true}" 
+                             value="${imovelBean.imovel.matricula}" />
+            </div>
+            <div>
+                <lable>Valor</lable>
+                <h:inputText value="${imovelBean.imovel.valorVenda}" />
+            </div>
+            <div>
+                <lable>Endereço</lable>
+                <h:inputText value="${imovelBean.imovel.endereco}" />
+            </div>
+            <div>
+                <h:commandButton value="Editar" action="${imovelBean.updateImovel()}" />
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
