@@ -1,4 +1,5 @@
 CREATE DATABASE trabalho_final_jsf;
+USE DATABASE trabalho_final_jsf;
 
 CREATE TABLE usuario (
 	id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
