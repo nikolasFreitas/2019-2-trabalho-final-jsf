@@ -66,6 +66,7 @@ public class ImovelBean {
         if (imovel.update()) {
             int index = imovelList.indexOf(imovel);
             imovelList.set(index, imovel);
+            imovel = new Imovel();
             return "imoveis";
         }
         return null;
